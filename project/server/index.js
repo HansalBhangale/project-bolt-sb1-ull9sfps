@@ -197,7 +197,7 @@ app.put('/api/skills/:id', authenticateToken, async (req, res) => {
 
 app.delete('/api/skills/:id', authenticateToken, async (req, res) => {
   try {
-    const skillId = parseInt(req.params.id);
+    const skillId = req.params.id;
     const skillIndex = db.data.skills.findIndex(skill => skill.id === skillId);
     
     if (skillIndex === -1) {
@@ -219,7 +219,9 @@ app.get('/api/projects', (req, res) => {
 
 app.post('/api/projects', authenticateToken, async (req, res) => {
   try {
-    const newProject = { id: Date.now(), ...req.body };
+    // Always store id as a string
+    const newProject = { id: String(Date.now()), ...req.body };
+    if (typeof newProject.id !== 'string') newProject.id = String(newProject.id);
     db.data.projects.push(newProject);
     await db.write();
     res.json(newProject);
@@ -230,14 +232,17 @@ app.post('/api/projects', authenticateToken, async (req, res) => {
 
 app.put('/api/projects/:id', authenticateToken, async (req, res) => {
   try {
-    const projectId = parseInt(req.params.id);
-    const projectIndex = db.data.projects.findIndex(project => project.id === projectId);
-    
+    const projectId = String(req.params.id); // Always compare as string
+    console.log('Update request for projectId:', JSON.stringify(projectId));
+    console.log('All project IDs:', db.data.projects.map(p => JSON.stringify(p.id)));
+    const projectIndex = db.data.projects.findIndex(project => String(project.id) === projectId);
     if (projectIndex === -1) {
+      console.log('Project not found:', projectId);
       return res.status(404).json({ message: 'Project not found' });
     }
-
+    // Ensure id stays a string after update
     db.data.projects[projectIndex] = { ...db.data.projects[projectIndex], ...req.body };
+    db.data.projects[projectIndex].id = String(db.data.projects[projectIndex].id);
     await db.write();
     res.json(db.data.projects[projectIndex]);
   } catch (error) {
@@ -247,7 +252,7 @@ app.put('/api/projects/:id', authenticateToken, async (req, res) => {
 
 app.delete('/api/projects/:id', authenticateToken, async (req, res) => {
   try {
-    const projectId = parseInt(req.params.id);
+    const projectId = req.params.id;
     const projectIndex = db.data.projects.findIndex(project => project.id === projectId);
     
     if (projectIndex === -1) {
@@ -269,7 +274,9 @@ app.get('/api/achievements', (req, res) => {
 
 app.post('/api/achievements', authenticateToken, async (req, res) => {
   try {
-    const newAchievement = { id: Date.now(), ...req.body };
+    // Always store id as a string
+    const newAchievement = { id: String(Date.now()), ...req.body };
+    if (typeof newAchievement.id !== 'string') newAchievement.id = String(newAchievement.id);
     db.data.achievements.push(newAchievement);
     await db.write();
     res.json(newAchievement);
@@ -280,14 +287,14 @@ app.post('/api/achievements', authenticateToken, async (req, res) => {
 
 app.put('/api/achievements/:id', authenticateToken, async (req, res) => {
   try {
-    const achievementId = parseInt(req.params.id);
-    const achievementIndex = db.data.achievements.findIndex(achievement => achievement.id === achievementId);
-    
+    const achievementId = String(req.params.id); // Always compare as string
+    const achievementIndex = db.data.achievements.findIndex(achievement => String(achievement.id) === achievementId);
     if (achievementIndex === -1) {
       return res.status(404).json({ message: 'Achievement not found' });
     }
-
+    // Ensure id stays a string after update
     db.data.achievements[achievementIndex] = { ...db.data.achievements[achievementIndex], ...req.body };
+    db.data.achievements[achievementIndex].id = String(db.data.achievements[achievementIndex].id);
     await db.write();
     res.json(db.data.achievements[achievementIndex]);
   } catch (error) {
@@ -297,13 +304,11 @@ app.put('/api/achievements/:id', authenticateToken, async (req, res) => {
 
 app.delete('/api/achievements/:id', authenticateToken, async (req, res) => {
   try {
-    const achievementId = parseInt(req.params.id);
-    const achievementIndex = db.data.achievements.findIndex(achievement => achievement.id === achievementId);
-    
+    const achievementId = String(req.params.id); // Always compare as string
+    const achievementIndex = db.data.achievements.findIndex(achievement => String(achievement.id) === achievementId);
     if (achievementIndex === -1) {
       return res.status(404).json({ message: 'Achievement not found' });
     }
-
     db.data.achievements.splice(achievementIndex, 1);
     await db.write();
     res.json({ message: 'Achievement deleted successfully' });

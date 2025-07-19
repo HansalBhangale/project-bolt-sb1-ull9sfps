@@ -129,15 +129,17 @@ const Projects = () => {
                     <Github className="h-4 w-4" />
                     <span>Code</span>
                   </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                    <span>Live Demo</span>
-                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

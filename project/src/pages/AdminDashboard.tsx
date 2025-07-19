@@ -130,7 +130,7 @@ const AdminDashboard = () => {
   ];
 
   const iconOptions = ['User', 'Code', 'Database', 'Brain', 'BarChart3', 'Settings', 'Zap', 'Globe', 'Cpu'];
-  const achievementTypes = ['award', 'certification', 'education'];
+  const achievementTypes = ['award', 'certification', 'education', 'experience'];
 
   useEffect(() => {
     fetchData();

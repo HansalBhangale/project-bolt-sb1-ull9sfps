@@ -7,11 +7,14 @@ const Achievements = () => {
 
   const [selectedType, setSelectedType] = useState('all');
 
-  const types = [
+  // Dynamically compute types from achievements
+  const typeSet = new Set(achievements.map(a => a.type).filter(Boolean));
+  const dynamicTypes = [
     { value: 'all', label: 'All' },
-    { value: 'award', label: 'Awards' },
-    { value: 'certification', label: 'Certifications' },
-    { value: 'education', label: 'Education' },
+    ...Array.from(typeSet).map(type => ({
+      value: type,
+      label: type.charAt(0).toUpperCase() + type.slice(1) + (type === 'certification' ? 's' : '')
+    }))
   ];
 
   const filteredAchievements = selectedType === 'all' 
@@ -70,7 +73,7 @@ const Achievements = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Achievements & Certifications
+            Achievements & Experience
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -84,7 +87,7 @@ const Achievements = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
-          {types.map((type) => (
+          {dynamicTypes.map((type) => (
             <button
               key={type.value}
               onClick={() => setSelectedType(type.value)}

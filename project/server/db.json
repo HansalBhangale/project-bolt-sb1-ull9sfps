@@ -6,29 +6,21 @@
   },
   "about": {
     "title": "About Me",
-    "content": "I'm a passionate Data Scientist with over 5 years of experience in transforming complex data into actionable insights. My expertise spans across artificial intelligence, machine learning, and deep learning, with a strong focus on developing scalable solutions that drive business growth.\n\nI hold a Master's degree in Computer Science with a specialization in Machine Learning from Stanford University. Throughout my career, I've worked with Fortune 500 companies to implement AI-driven solutions that have resulted in millions of dollars in cost savings and revenue generation.\n\nMy approach combines technical excellence with strategic thinking, ensuring that every solution I develop not only solves the immediate problem but also contributes to long-term business objectives."
+    "content": "I'm Hansal Bhangale, a passionate Software Engineering student at the University of Mumbai, driven by the intersection of Data Science, Artificial Intelligence, and Financial Modelling. I thrive on using technology to solve real-world problems, blending my technical acumen with a strong foundation in finance — backed by a CFA Level 1 certification.\n\nWith hands-on experience in quantum computing, machine learning, and predictive financial systems, I’ve built and deployed projects ranging from sentiment analysis of financial videos using transformers to quantum-enhanced supply chain optimization. My work at CybraneX Technologies involved developing cutting-edge quantum algorithms like QAOA and QFT to solve complex challenges in logistics and bioinformatics.\n\nI believe in continuous learning and am actively deepening my expertise in deep learning, NLP, and LSTM-based forecasting. Whether it’s building end-to-end data pipelines, engineering interactive dashboards with Streamlit, or analyzing millions of rows of data, I aim to create scalable, insightful, and efficient solutions.\n\nWhen I’m not coding, you’ll find me exploring emerging technologies, diving into market trends, or optimizing real-world systems through data-driven insights."
   },
   "skills": [
     {
       "id": "1",
-      "category": "Programming Languages",
+      "category": "Programming Languages and Frameworks",
       "icon": "Code",
       "skills": [
         {
           "name": "Python",
-          "level": 95
-        },
-        {
-          "name": "R",
           "level": 90
         },
         {
-          "name": "SQL",
-          "level": 88
-        },
-        {
-          "name": "JavaScript",
-          "level": 85
+          "name": "C",
+          "level": 80
         },
         {
           "name": "Java",
@@ -39,40 +31,40 @@
           "level": 75
         },
         {
-          "name": "Node.js",
-          "level": 60
+          "name": "Javascript",
+          "level": 70
+        },
+        {
+          "name": "Express",
+          "level": 70
+        },
+        {
+          "name": "Node",
+          "level": 70
         }
       ],
       "order": 0
     },
     {
       "id": "2",
-      "category": "Machine Learning",
+      "category": "Machine Learning and Artificial Intelligence",
       "icon": "Brain",
       "skills": [
         {
-          "name": "TensorFlow",
-          "level": 92
-        },
-        {
-          "name": "PyTorch",
+          "name": "Scikit-Learn",
           "level": 90
         },
         {
-          "name": "Scikit-learn",
-          "level": 95
-        },
-        {
-          "name": "Keras",
-          "level": 88
-        },
-        {
-          "name": "XGBoost",
+          "name": "Langchain",
           "level": 85
         },
         {
-          "name": "OpenCV",
-          "level": 82
+          "name": "NLP",
+          "level": 80
+        },
+        {
+          "name": "Tensorflow",
+          "level": 80
         }
       ],
       "order": 1
@@ -91,20 +83,20 @@
           "level": 92
         },
         {
-          "name": "Apache Spark",
-          "level": 85
-        },
-        {
-          "name": "Hadoop",
-          "level": 80
-        },
-        {
           "name": "MongoDB",
           "level": 85
         },
         {
-          "name": "PostgreSQL",
+          "name": "SQL",
           "level": 88
+        },
+        {
+          "name": "FAISS",
+          "level": 70
+        },
+        {
+          "name": "ChromaDB",
+          "level": 70
         }
       ],
       "order": 2
@@ -119,24 +111,20 @@
           "level": 90
         },
         {
+          "name": "PowerBi",
+          "level": 90
+        },
+        {
           "name": "Seaborn",
           "level": 88
         },
         {
-          "name": "Plotly",
-          "level": 85
-        },
-        {
           "name": "Tableau",
-          "level": 82
+          "level": 84
         },
         {
-          "name": "Power BI",
+          "name": "Streamlit",
           "level": 80
-        },
-        {
-          "name": "D3.js",
-          "level": 75
         }
       ],
       "order": 3
@@ -151,68 +139,48 @@
           "level": 88
         },
         {
-          "name": "Google Cloud",
-          "level": 85
-        },
-        {
           "name": "Docker",
           "level": 82
         },
         {
-          "name": "Kubernetes",
-          "level": 80
-        },
-        {
-          "name": "Git",
-          "level": 92
-        },
-        {
-          "name": "Jenkins",
-          "level": 78
+          "name": "Git and Github",
+          "level": 85
         }
       ],
       "order": 4
     },
     {
-      "id": "6",
-      "category": "Specializations",
-      "icon": "Zap",
-      "skills": [
-        {
-          "name": "Deep Learning",
-          "level": 92
-        },
-        {
-          "name": "Computer Vision",
-          "level": 88
-        },
-        {
-          "name": "NLP",
-          "level": 90
-        },
-        {
-          "name": "Time Series",
-          "level": 85
-        },
-        {
-          "name": "MLOps",
-          "level": 82
-        },
-        {
-          "name": "A/B Testing",
-          "level": 86
-        }
-      ],
-      "order": 5
-    },
-    {
-      "id": 1752902591103,
+      "id": "1752910854844_6",
       "category": "Finance",
       "icon": "Code",
       "skills": [
         {
           "name": "Financial Modelling",
           "level": 60
+        },
+        {
+          "name": "Excel",
+          "level": 70
+        }
+      ],
+      "order": 6
+    },
+    {
+      "id": "1752941327995",
+      "category": "Quantum Computing",
+      "icon": "Cpu",
+      "skills": [
+        {
+          "name": "Qiskit",
+          "level": 70
+        },
+        {
+          "name": "Quantum Algorithms",
+          "level": 70
+        },
+        {
+          "name": "Quantum Optimization",
+          "level": 68
         }
       ],
       "order": 6
@@ -220,96 +188,225 @@
   ],
   "projects": [
     {
-      "id": "1",
-      "title": "Predictive Analytics Platform",
-      "description": "A comprehensive ML platform for real-time customer behavior prediction using ensemble methods. Achieved 94% accuracy in churn prediction.",
-      "image": "https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "id": "1752933091340",
+      "title": "News Research Tol",
+      "description": "An AI-powered tool that reads business news articles from various links , combines them and answers financial questions with insightful, evidence-based analysis from the sources.",
+      "image": "https://media.gettyimages.com/id/518680426/vector/news.jpg?s=1024x1024&w=gi&k=20&c=enxlQzamJeW6b9lABVjHM4PrcZIO5elyRC6fxIccb5g=",
+      "technologies": [
+        "Langhcain",
+        "Streamlit",
+        "OpenAI API",
+        "FAISS"
+      ],
+      "category": "Generative AI",
+      "github": "https://github.com/HansalBhangale/News_Research_Tool",
+      "demo": "",
+      "featured": false
+    },
+    {
+      "id": "1752933583926",
+      "title": "Earnings Call Analysis",
+      "description": "An intelligent assistant that reads company earnings call transcripts and answers complex financial questions with contextual, structured insights.",
+      "image": "https://i.ytimg.com/vi/Tl4zGvDOCOM/maxresdefault.jpg",
+      "technologies": [
+        "Langchain",
+        "FAISS",
+        "Streamlit",
+        "FastAPI",
+        "OpenAI GPT-4 Turbo"
+      ],
+      "category": "Generative AI",
+      "github": "https://github.com/HansalBhangale/Earnings-Concall-Analysis",
+      "demo": "",
+      "featured": false
+    },
+    {
+      "id": "1752935107833",
+      "title": "Predictive Asset Allocation System",
+      "description": "An intelligent dashboard that predicts a user's financial risk score and recommends a personalized stock portfolio using future price forecasts and risk-based optimization strategies.",
+      "image": "https://cdn.educba.com/academy/wp-content/uploads/2020/12/Portfolio-Optimization.jpg",
+      "technologies": [
+        "Ensemble Tecniques",
+        "LSTM",
+        "PyPortflioOpt",
+        "yFinance",
+        "Streamlit"
+      ],
+      "category": "Deep Learning",
+      "github": "https://github.com/HansalBhangale/Predictive-Asset-Allocation-System",
+      "demo": "",
+      "featured": true
+    },
+    {
+      "id": "1752936232850",
+      "title": "YouTube Video Sentiment Analysis",
+      "description": "A web app that transcribes YouTube videos, summarizes the content, and performs sentiment analysis to evaluate financial tone—all through a simple, interactive interface.",
+      "image": "https://kw143.github.io/CS4641Project/visualizations/sentiment.jpg",
+      "technologies": [
+        "AssemblyAI",
+        "RoBERTA",
+        "FalconsAI",
+        "Streamlit",
+        "yt-dlp"
+      ],
+      "category": "NLP",
+      "github": "https://github.com/HansalBhangale/Youtube-Video-Sentiment-Analysis",
+      "demo": "",
+      "featured": false
+    },
+    {
+      "id": "1752936480620",
+      "title": "Movie Recommender",
+      "description": "This Movie Recommender project uses content-based filtering to suggest similar movies based on user input. It processes movie metadata, extracts features, and computes similarity scores to generate recommendations.",
+      "image": "https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg",
       "technologies": [
         "Python",
-        "TensorFlow",
-        "AWS",
-        "React"
+        "Scikit-Learn",
+        "NLTK"
       ],
       "category": "Machine Learning",
-      "github": "https://github.com/HansalBhangale/predictive-analytics",
-      "demo": "https://demo.example.com",
-      "featured": true,
-      "createdAt": "2025-07-08T06:07:00.399Z"
+      "github": "https://github.com/HansalBhangale/Movie-Recommender",
+      "demo": "",
+      "featured": false
     },
     {
-      "id": "2",
-      "title": "Computer Vision Quality Control",
-      "description": "Deep learning solution for automated quality control in manufacturing. Reduced defect detection time by 75% while improving accuracy.",
-      "image": "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "id": "1752936755850",
+      "title": "Student Marks Prediction",
+      "description": "This project predicts student marks using an end-to-end data pipeline, covering data ingestion, preprocessing, model training, and evaluation. It automates the entire workflow from raw data to model deployment, ensuring reproducibility and scalability.",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.YCkA5VePpKV36zub-YZGUAHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       "technologies": [
-        "PyTorch",
-        "OpenCV",
-        "Docker",
-        "FastAPI"
+        "Catboost",
+        "Xgboost",
+        "Flask",
+        "Scikit-Learn"
       ],
-      "category": "Computer Vision",
-      "github": "https://github.com/HansalBhangale/cv-quality-control",
-      "demo": "https://demo.example.com",
-      "featured": false,
-      "createdAt": "2025-07-08T06:07:00.399Z"
+      "category": "Machine Learning",
+      "github": "https://github.com/HansalBhangale/Student-Marks-Prediction",
+      "demo": "",
+      "featured": false
     },
     {
-      "id": "3",
-      "title": "NLP Sentiment Analysis Engine",
-      "description": "Real-time sentiment analysis system for social media monitoring. Processes 1M+ tweets daily with 96% accuracy.",
-      "image": "https://images.pexels.com/photos/1181673/pexels-photo-1181673.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "id": "1752937039410",
+      "title": "Customer Churn Prediction ",
+      "description": "An interactive app that predicts the likelihood of a bank customer churning using a trained deep learning model, based on demographic and account activity data.",
+      "image": "https://etechlibraries.com/wp-content/uploads/2022/09/Churn-Prediction-Model-768x427.jpg",
       "technologies": [
-        "Python",
-        "BERT",
-        "Kafka",
-        "MongoDB"
+        "Tensorflow",
+        "Keras",
+        "Scikit-learn",
+        "Streamlit"
       ],
-      "category": "Natural Language Processing",
-      "github": "https://github.com/HansalBhangale/nlp-sentiment",
-      "demo": "https://demo.example.com",
-      "featured": true,
-      "createdAt": "2025-07-08T06:07:00.399Z"
+      "category": "Deep Learning",
+      "github": "https://github.com/HansalBhangale/Churn-Model",
+      "demo": "",
+      "featured": false
+    },
+    {
+      "id": "1752937390064",
+      "title": "Invoice Extractor",
+      "description": "A web app that extracts key details from invoice images using Google's Gemini Vision API, allowing users to ask natural language questions like “What is the total amount?” or “Who is the vendor?”",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.Kl2PgI7k3JJsPxIkN86_xwHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "technologies": [
+        "Gemini AI",
+        "Pillow",
+        "Streamlit"
+      ],
+      "category": "Generative AI",
+      "github": "https://github.com/HansalBhangale/Invoice-Extracter",
+      "demo": "",
+      "featured": false
+    },
+    {
+      "id": "1752937780024",
+      "title": "House Predcition",
+      "description": "This project predicts house prices using data analysis, feature engineering, and machine learning",
+      "image": "https://cdn.goconqr.com/uploads/media/image/12761342/desktop_b7159407-0a8a-4f14-94ba-cdf485114edb.jpg",
+      "technologies": [
+        "Scikit-learn",
+        "Xgboost",
+        "Matplotlib",
+        "Pandas and Numpy"
+      ],
+      "category": "Machine Learning",
+      "github": "https://github.com/HansalBhangale/House-Prediction",
+      "demo": "",
+      "featured": false
+    },
+    {
+      "id": "1752938028850",
+      "title": "Employee Attrition",
+      "description": "This notebook explores employee attrition data, processes features, and applies machine learning models to predict employee status. It uses Python libraries for data analysis, visualization, and classification.",
+      "image": "https://traqq.com/blog/wp-content/uploads/2020/11/shutterstock_1696263217_edited-1024x512.jpg",
+      "technologies": [
+        "Scikit-learn",
+        "Matplotlib",
+        "Pandas Numpy"
+      ],
+      "category": "Machine Learning",
+      "github": "https://github.com/HansalBhangale/Employee-Attrition",
+      "demo": "",
+      "featured": false
+    },
+    {
+      "id": "1752938340997",
+      "title": "Goolge PlayStore",
+      "description": "Analyzed app data to identify the most installed category, top 5 apps per leading category, and count of apps with a perfect 5-star rating—highlighting key trends in user engagement and popularity.",
+      "image": "https://wallpaperaccess.com/full/3331371.jpg",
+      "technologies": [
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "category": "Exploratory Data analysis",
+      "github": "https://github.com/HansalBhangale/Google-Playstore",
+      "demo": "",
+      "featured": false
     }
   ],
   "achievements": [
     {
-      "id": "1",
-      "type": "award",
-      "title": "Best AI Innovation Award",
-      "organization": "Tech Excellence Awards 2023",
-      "date": "2023",
-      "description": "Recognized for developing a groundbreaking computer vision solution that revolutionized quality control in manufacturing.",
-      "url": "https://example.com/award",
-      "createdAt": "2025-07-08T06:07:00.399Z"
-    },
-    {
-      "id": "2",
-      "type": "certification",
-      "title": "AWS Certified Machine Learning - Specialty",
-      "organization": "Amazon Web Services",
-      "date": "2023",
-      "description": "Advanced certification demonstrating expertise in building, training, and deploying ML models on AWS.",
-      "url": "https://example.com/cert",
-      "createdAt": "2025-07-08T06:07:00.399Z"
-    },
-    {
-      "id": "3",
-      "type": "education",
-      "title": "Master of Science in Computer Science",
-      "organization": "Stanford University",
-      "date": "2019",
-      "description": "Specialized in Machine Learning and Artificial Intelligence. Graduated Magna Cum Laude.",
-      "url": "https://example.com/degree",
-      "createdAt": "2025-07-08T06:07:00.399Z"
-    },
-    {
-      "id": 1752902352782,
+      "id": "1752902352782",
       "type": "education",
       "title": "CFA LEVEL 1",
-      "organization": "CFAI",
-      "date": "Feb 2026",
-      "description": "Passes CFA level 1",
+      "organization": "CFA Institue",
+      "date": "Apr 2026",
+      "description": "Successfully cleared CFA Level 1 with a strong score of 1660, demonstrating solid proficiency in financial analysis, ethics, portfolio management, and investment tools. This milestone reflects a strong foundation in core finance concepts and analytical thinking.",
+      "url": "https://credentials.cfainstitute.org/a55dd300-1152-4233-ba93-889d5c0e0013#acc.nyP4ZoUa"
+    },
+    {
+      "id": "1752940012389",
+      "type": "experience",
+      "title": "SDE Intern",
+      "organization": "wohlig",
+      "date": "Jul 2025 - Dec 2025",
+      "description": "Currently working as a Software Development Intern focused on GenAI backend development, leveraging GCP and Docker to build scalable and efficient systems. Engaged in full-time development from July to December 2025.",
+      "url": "https://drive.usercontent.google.com/download?id=1PaFu2ustamguqlqyP7S4asWDtVEoAYzT&authuser=0&acrobatPromotionSource=GoogleDriveGridView"
+    },
+    {
+      "id": "1752940393868",
+      "type": "education",
+      "title": "BTech (Computer Science)",
+      "organization": "Mumbai University",
+      "date": "Jun 2022- Jun 2026",
+      "description": "Pursuing a Bachelor’s degree in Computer Engineering with a specialization in Data Science Honors at Mumbai University, gaining strong foundations in AI, ML, and data-driven technologies.\n",
       "url": ""
+    },
+    {
+      "id": "1752940651834",
+      "type": "experience",
+      "title": "Quantum Developer",
+      "organization": "CybraneX",
+      "date": "Aug 2024 - Jan 2025",
+      "description": "I was asigned the role of Quantum Developer where I worked on Supply Chain Optimization. During this I worked on QAOA and VQE algorithms for optimizing the inventory management between suppliers and retailers and path optimization also.I was asigned the role of Quantum Developer where I worked on Supply Chain Optimization. During this I worked on QAOA and VQE algorithms for optimizing the inventory management between suppliers and retailers and path optimization also.",
+      "url": "https://drive.usercontent.google.com/download?id=1Tt5bMEO-CjCuNS4Veq7W1LBDbkESSAHp&authuser=0&acrobatPromotionSource=GoogleDriveGridView"
+    },
+    {
+      "id": "1752941225230",
+      "type": "experience",
+      "title": "Quantum Researcher",
+      "organization": "CybraneX",
+      "date": "Jul-2023 - Sep 2023",
+      "description": "I worked as a Quantum Reaseacher where I was assigned to find and develop Quantum algorithm for Optimizing the Protein Structure",
+      "url": "https://drive.usercontent.google.com/download?id=10xEdpPnwZ4Yn5Z4wtSBJuQEl4aLfD35u&authuser=0&acrobatPromotionSource=GoogleDriveGridView"
     }
   ],
   "settings": {
