@@ -24,7 +24,7 @@ const Achievements = () => {
   useEffect(() => {
     const fetchAchievements = async () => {
       try {
-        const response = await fetch('/api/achievements');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/achievements`);
         if (response.ok) {
           const data = await response.json();
           setAchievements(data);

@@ -30,7 +30,7 @@ const About = () => {
   useEffect(() => {
     const fetchAboutData = async () => {
       try {
-        const response = await fetch('/api/about');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/about`);
         if (response.ok) {
           const data = await response.json();
           setAboutData(data);
@@ -46,7 +46,7 @@ const About = () => {
   useEffect(() => {
     const fetchKeyMetrics = async () => {
       try {
-        const res = await fetch('/api/key-metrics');
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/key-metrics`);
         if (res.ok) {
           const data = await res.json();
           setKeyMetrics(data);

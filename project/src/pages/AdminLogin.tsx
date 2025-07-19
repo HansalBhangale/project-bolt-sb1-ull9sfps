@@ -27,7 +27,7 @@ const AdminLogin = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/admin/login', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

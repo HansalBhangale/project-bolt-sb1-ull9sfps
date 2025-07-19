@@ -139,7 +139,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchKeyMetrics = async () => {
       try {
-        const res = await fetch('/api/key-metrics');
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/key-metrics`);
         if (res.ok) {
           const data = await res.json();
           setKeyMetrics(data);
@@ -153,11 +153,11 @@ const AdminDashboard = () => {
     setIsLoading(true);
     try {
       const [aboutRes, skillsRes, projectsRes, achievementsRes, settingsRes] = await Promise.all([
-        fetch('/api/about'),
-        fetch('/api/skills'),
-        fetch('/api/projects'),
-        fetch('/api/achievements'),
-        fetch('/api/settings')
+        fetch(`${import.meta.env.VITE_API_URL}/api/about`),
+        fetch(`${import.meta.env.VITE_API_URL}/api/skills`),
+        fetch(`${import.meta.env.VITE_API_URL}/api/projects`),
+        fetch(`${import.meta.env.VITE_API_URL}/api/achievements`),
+        fetch(`${import.meta.env.VITE_API_URL}/api/settings`)
       ]);
 
       if (aboutRes.ok) {
@@ -199,7 +199,7 @@ const AdminDashboard = () => {
 
   const saveAboutData = async () => {
     try {
-      const response = await fetch('/api/about', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/about`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -221,7 +221,7 @@ const AdminDashboard = () => {
 
   const saveSettings = async () => {
     try {
-      const response = await fetch('/api/settings', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/settings`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -244,7 +244,7 @@ const AdminDashboard = () => {
   const saveKeyMetrics = async () => {
     setKeyMetricsLoading(true);
     try {
-      const res = await fetch('/api/key-metrics', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/key-metrics`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -286,7 +286,7 @@ const AdminDashboard = () => {
     try {
       console.log('Saving skill form:', skillForm);
       
-      const url = editingItem ? `/api/skills/${editingItem.id}` : '/api/skills';
+      const url = editingItem ? `${import.meta.env.VITE_API_URL}/api/skills/${editingItem.id}` : `${import.meta.env.VITE_API_URL}/api/skills`;
       const method = editingItem ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -319,7 +319,7 @@ const AdminDashboard = () => {
     if (!confirm('Are you sure you want to delete this skill category?')) return;
 
     try {
-      const response = await fetch(`/api/skills/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/skills/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
@@ -362,7 +362,7 @@ const AdminDashboard = () => {
 
   const saveProject = async () => {
     try {
-      const url = editingItem ? `/api/projects/${editingItem.id}` : '/api/projects';
+      const url = editingItem ? `${import.meta.env.VITE_API_URL}/api/projects/${editingItem.id}` : `${import.meta.env.VITE_API_URL}/api/projects`;
       const method = editingItem ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -391,7 +391,7 @@ const AdminDashboard = () => {
     if (!confirm('Are you sure you want to delete this project?')) return;
 
     try {
-      const response = await fetch(`/api/projects/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
@@ -432,7 +432,7 @@ const AdminDashboard = () => {
 
   const saveAchievement = async () => {
     try {
-      const url = editingItem ? `/api/achievements/${editingItem.id}` : '/api/achievements';
+      const url = editingItem ? `${import.meta.env.VITE_API_URL}/api/achievements/${editingItem.id}` : `${import.meta.env.VITE_API_URL}/api/achievements`;
       const method = editingItem ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -461,7 +461,7 @@ const AdminDashboard = () => {
     if (!confirm('Are you sure you want to delete this achievement?')) return;
 
     try {
-      const response = await fetch(`/api/achievements/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/achievements/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
@@ -1307,7 +1307,7 @@ const AdminDashboard = () => {
     const formData = new FormData();
     formData.append('resume', file);
     try {
-      const response = await fetch('/api/admin/upload-resume', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/upload-resume`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
@@ -1316,12 +1316,13 @@ const AdminDashboard = () => {
       });
       if (response.ok) {
         toast.success('Resume uploaded successfully!');
-        if (resumeInputRef.current) resumeInputRef.current.value = '';
+        fetchData(); // Refresh data to show new resume link
       } else {
-        const err = await response.json();
-        toast.error(err.message || 'Failed to upload resume.');
+        const errorData = await response.json();
+        toast.error(`Failed to upload resume: ${errorData.message || 'Unknown error'}`);
       }
     } catch (error) {
+      console.error('Error uploading resume:', error);
       toast.error('Failed to upload resume.');
     } finally {
       setResumeUploading(false);
@@ -1329,71 +1330,45 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex justify-between items-center mb-8"
+    <div className="min-h-screen bg-gray-900 text-white p-6">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-4xl font-bold text-white">Admin Dashboard</h1>
+        <button
+          onClick={handleLogout}
+          className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center space-x-2 hover:bg-red-700 transition-colors"
         >
-          <h1 className="text-3xl font-bold text-white">Admin Dashboard</h1>
-          <button
-            onClick={handleLogout}
-            className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center space-x-2 hover:bg-red-700 transition-colors"
-          >
-            <LogOut className="h-4 w-4" />
-            <span>Logout</span>
-          </button>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-4 gap-8">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-1"
-          >
-            <div className="glass-morphism p-6 rounded-2xl">
-              <nav className="space-y-2">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-300 ${
-                      activeTab === tab.id
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                        : 'text-gray-300 hover:bg-white/5 hover:text-white'
-                    }`}
-                  >
-                    {tab.icon}
-                    <span>{tab.label}</span>
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-3"
-          >
-            <div className="glass-morphism p-8 rounded-2xl">
-              {isLoading ? (
-                <div className="flex items-center justify-center h-64">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
-                </div>
-              ) : (
-                renderTabContent()
-              )}
-            </div>
-          </motion.div>
-        </div>
-
-        {renderModal()}
+          <LogOut className="h-5 w-5" />
+          <span>Logout</span>
+        </button>
       </div>
+
+      <div className="flex space-x-4 border-b border-gray-800 pb-4 mb-6">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-semibold transition-colors ${
+              activeTab === tab.id
+                ? 'bg-blue-600 text-white'
+                : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            {tab.icon}
+            <span>{tab.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {isLoading ? (
+        <div className="text-center py-12">
+          <p className="text-gray-500">Loading...</p>
+        </div>
+      ) : (
+        <div className="space-y-6">
+          {renderTabContent()}
+          {renderModal()}
+        </div>
+      )}
     </div>
   );
 };

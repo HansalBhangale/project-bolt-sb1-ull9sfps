@@ -8,7 +8,7 @@ const Skills = () => {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await fetch('/api/skills');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/skills`);
         if (response.ok) {
           const data = await response.json();
           setSkills(data);
