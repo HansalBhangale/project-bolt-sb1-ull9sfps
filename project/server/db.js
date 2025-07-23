@@ -193,7 +193,9 @@ My approach combines technical excellence with strategic thinking, ensuring that
 };
 
 // Database file path
-const dbPath = path.join(__dirname, 'db.json');
+const dbPath = process.env.NODE_ENV === 'production'
+  ? '/tmp/db.json'
+  : path.join(__dirname, 'db.json');
 
 // Initialize database
 const adapter = new JSONFile(dbPath);
